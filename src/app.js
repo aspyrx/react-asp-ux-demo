@@ -8,6 +8,10 @@ function App() {
     return <div className={styles.app}>
         <h1>react-asp-ux demo</h1>
         <div>
+            <h2><code>&lt;a&gt;</code></h2>
+            <a href="foo">Link</a> <a href=".">Visited link</a>
+        </div>
+        <div>
             <h2>Button</h2>
             <Button>Button</Button>
             <Button design="primary">Primary button</Button>
@@ -17,6 +21,7 @@ function App() {
         </div>
         <div>
             <h2>Input</h2>
+            <h3>Text</h3>
             <Group placeholder="placeholder">
                 <Input>Text input</Input>
                 <Input design="primary">Primary text input</Input>
@@ -26,6 +31,7 @@ function App() {
                 <Input inline>Inline text input</Input>
                 <Input inline>Inline text input</Input>
             </Group>
+            <h3>Checkbox</h3>
             <Group type="checkbox" name="asp-ux-input-checkbox-example">
                 <Input>Checkbox</Input>
                 <Input defaultChecked>Checked checkbox</Input>
@@ -35,6 +41,7 @@ function App() {
                 <Input design="warning" inline>Warning checkbox</Input>
                 <Input design="danger" inline >Danger checkbox</Input>
             </Group>
+            <h3>Radio</h3>
             <Group type="radio" name="asp-ux-input-radio-example">
                 <Input>Radio</Input>
                 <Input defaultChecked>Checked radio</Input>
