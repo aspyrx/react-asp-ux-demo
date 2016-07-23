@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Button, Input } from 'react-asp-ux';
+import { Button, Group, Input } from 'react-asp-ux';
 
 import styles from './app.less';
 
@@ -17,29 +17,33 @@ function App() {
         </div>
         <div>
             <h2>Input</h2>
-            <Input placeholder="placeholder">Text input</Input>
-            <Input design="primary" placeholder="placeholder">Primary text input</Input>
-            <Input design="success" placeholder="placeholder">Success text input</Input>
-            <Input design="warning" placeholder="placeholder">Warning text input</Input>
-            <Input design="danger" placeholder="placeholder">Danger text input</Input>
-            <Input placeholder="placeholder" inline>Inline text input</Input>
-            <Input placeholder="placeholder" inline>Inline text input</Input>
-            <Input type="checkbox">Checkbox</Input>
-            <Input type="checkbox" defaultChecked>Checked checkbox</Input>
-            <Input type="checkbox" inline>Inline checkbox</Input>
-            <Input type="checkbox" design="primary" inline>Primary checkbox</Input>
-            <Input type="checkbox" design="success" inline>Success checkbox</Input>
-            <Input type="checkbox" design="warning" inline>Warning checkbox</Input>
-            <Input type="checkbox" design="danger" inline >Danger checkbox</Input>
-            <Input.Group name="asp-ux-input-radio-example">
-                <Input type="radio">Radio</Input>
-                <Input type="radio" defaultChecked>Checked radio</Input>
-                <Input type="radio" inline>Inline radio</Input>
-                <Input type="radio" design="primary" inline>Primary radio</Input>
-                <Input type="radio" design="success" inline>Success radio</Input>
-                <Input type="radio" design="warning" inline>Warning radio</Input>
-                <Input type="radio" design="danger" inline>Danger radio</Input>
-            </Input.Group>
+            <Group placeholder="placeholder">
+                <Input>Text input</Input>
+                <Input design="primary">Primary text input</Input>
+                <Input design="success">Success text input</Input>
+                <Input design="warning">Warning text input</Input>
+                <Input design="danger">Danger text input</Input>
+                <Input inline>Inline text input</Input>
+                <Input inline>Inline text input</Input>
+            </Group>
+            <Group type="checkbox" name="asp-ux-input-checkbox-example">
+                <Input>Checkbox</Input>
+                <Input defaultChecked>Checked checkbox</Input>
+                <Input inline>Inline checkbox</Input>
+                <Input design="primary" inline>Primary checkbox</Input>
+                <Input design="success" inline>Success checkbox</Input>
+                <Input design="warning" inline>Warning checkbox</Input>
+                <Input design="danger" inline >Danger checkbox</Input>
+            </Group>
+            <Group type="radio" name="asp-ux-input-radio-example">
+                <Input>Radio</Input>
+                <Input defaultChecked>Checked radio</Input>
+                <Input inline>Inline radio</Input>
+                <Input design="primary" inline>Primary radio</Input>
+                <Input design="success" inline>Success radio</Input>
+                <Input design="warning" inline>Warning radio</Input>
+                <Input design="danger" inline>Danger radio</Input>
+            </Group>
         </div>
     </div>;
 }
