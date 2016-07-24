@@ -4,7 +4,7 @@ import Button from 'react-asp-ux/lib/Button';
 
 export default function Buttons() {
     return <div>
-        <h2>Button</h2>
+        <h2>Buttons</h2>
         <Button>Button</Button>
         <Button design="primary">Primary button</Button>
         <Button design="success">Success button</Button>
