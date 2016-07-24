@@ -7,7 +7,8 @@ export default function Inputs() {
         <h2>Inputs</h2>
         <h3>Text</h3>
         <Group placeholder="placeholder">
-            <Input>Text input</Input>
+            <Input />
+            <Input>Labeled text input</Input>
             <Input design="primary">Primary text input</Input>
             <Input design="success">Success text input</Input>
             <Input design="warning">Warning text input</Input>
