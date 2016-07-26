@@ -1,18 +1,57 @@
+@import (reference) '~react-asp-ux/lib/index.less';
+
 :global(#app) {
     display: flex;
     justify-content: center;
 }
 
 .app {
-    min-height: 100vh;
-    max-width: 800px;
-    margin: 0 10px 10px;
-
+    flex: 1;
+    height: 100vh;
     display: flex;
-    flex-flow: column;
 
     > * {
-        margin-bottom: 10px;
+        display: flex;
+        flex-flow: column;
+
+        margin-right: @spacing-x;
+    }
+
+    > .nav {
+        padding: @spacing-y @spacing-x;
+
+        font-size: 200%;
+
+        a {
+            .margin-spacing();
+
+            padding: @spacing-y @spacing-x;
+            text-decoration: none;
+
+            &.active {
+                background-color: @color-primary;
+                color: contrast(@color-primary, @color-default, @background-color);
+            }
+        }
+
+        div, header {
+            display: flex;
+            flex-flow: column;
+        }
+
+        div > a {
+            font-size: 75%;
+        }
+    }
+
+    > main {
+        flex: 1;
+        overflow: auto;
+
+        > * {
+            max-width: 800px;
+            margin-bottom: @spacing-y;
+        }
     }
 }
 
