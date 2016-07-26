@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Router from 'react-router/lib/Router';
 import Route from 'react-router/lib/Route';
+import IndexRoute from 'react-router/lib/IndexRoute';
 import Link from 'react-router/lib/Link';
 import IndexLink from 'react-router/lib/IndexLink';
 import browserHistory from 'react-router/lib/browserHistory';
@@ -62,6 +63,15 @@ Nav.propTypes = {
     title: React.PropTypes.string
 }
 
+function Home() {
+    return <div>
+        <h1>react-asp-ux demo</h1>
+        <h2>Demo sandbox for <a href="https://github.com/aspyrx/react-asp-ux">
+                react-asp-ux
+        </a> components.</h2>
+    </div>
+}
+
 function App(props) {
     const { children } = props;
 
@@ -81,6 +91,7 @@ const bundleLoadedEvent = new Event('appBundleLoaded');
 bundleLoadedEvent.renderApp = function renderApp(elem, done) {
     render(<Router history={browserHistory}>
         <Route path="/" component={App}>
+            <IndexRoute component={Home} />
             {demos}
         </Route>
     </Router>, elem, done);

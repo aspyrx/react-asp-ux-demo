@@ -11,14 +11,15 @@
     display: flex;
 
     > * {
+        overflow: auto;
         display: flex;
-        flex-flow: column;
 
-        margin-right: @spacing-x;
+        padding-right: @spacing-x;
     }
 
     > .nav {
         padding: @spacing-y @spacing-x;
+        flex-flow: column;
 
         font-size: 200%;
 
@@ -46,11 +47,11 @@
 
     > main {
         flex: 1;
-        overflow: auto;
+        justify-content: center;
 
         > * {
+            flex: 1;
             max-width: 800px;
-            margin-bottom: @spacing-y;
         }
     }
 }
