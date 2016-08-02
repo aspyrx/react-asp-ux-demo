@@ -43,9 +43,12 @@ if (process.argv[2] === 'watch') {
     webpackCompiler().watch({}, webpackBuildFinished);
     return;
 } else if (process.argv[2] === 'live') {
-    const webpackDevServer = require('webpack-dev-server');
+    const app = require('express')();
+    const webpackDevMiddleware = require('webpack-dev-middleware');
+    const webpackHotMiddleware = require('webpack-hot-middleware');
+
     Object.keys(webpackConfig.entry).forEach(function entries(key) {
-        webpackConfig.entry[key].push('webpack-dev-server/client?http://localhost:8080/', 'webpack/hot/dev-server');
+        webpackConfig.entry[key].push('webpack-hot-middleware/client');
     });
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
     webpackConfig.module.loaders.forEach(function loaders(loader) {
@@ -56,13 +59,16 @@ if (process.argv[2] === 'watch') {
         }
     });
 
-    const server = new webpackDevServer(webpackCompiler(), {
-        hot: true,
-        compress: true,
-        historyApiFallback: true,
+    const compiler = webpackCompiler();
+
+    app.use(webpackDevMiddleware(compiler, {
+        publicPath: webpackConfig.output.publicPath,
         stats: { colors: true, timings: true, cached: false }
-    });
-    server.listen(8080, "localhost");
+    }));
+
+    app.use(webpackHotMiddleware(compiler));
+
+    app.listen(8080);
     return;
 }
 
